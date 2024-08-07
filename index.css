@@ -143,6 +143,7 @@
 
 .hero_section .hero_container {
   text-align: center;
+  max-width: 50vw;
   margin: 0 auto;
 }
 
@@ -224,22 +225,148 @@
   margin: 5px 0;
 }
 
+/* star of section two */
+
+.grid-container{
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  gap:1rem;
+  width: 100%;
+  color:white;
+  padding: 0 2rem;
+  
+}
+
+article{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+.scrimba-way{
+  grid-column: span 2;
+  margin-top: 10px;
+  color:black;
+  font-size: 1rem;
+  align-items: center;
+  padding-top: 2em;
+
+}
+
+.learn-faster{
+  grid-row: span 2;
+  border-radius: 15px;
+ flex-shrink: 0;
+ background-image: url('./assets/images/homepage/data-8380806_1280.jpg');
+
+
+}
+.get-help, .hack-your-way{
+flex-shrink: 0;
+border-radius: 15px;
+background-color: red;
+}
+.get-help{
+  background-image: url('./assets/images/homepage/data-8380807_1280.jpg');
+
+}
+
+.hack-your-way{
+  background-image: url('./assets/images/homepage/digital-1742687_1280.jpg');
+}
+.card{
+  background-color: rgba(0, 0, 0, 0.7);
+  size:cover;
+  padding: 2rem;
+}
+
+@media screen and (max-width:600px){
+  .grid-container{
+  grid-template: 1fr / 1fr;
+   gap:0;
+  }
+  .card{
+    grid-column: 1;
+    margin-bottom: 1em ;
+  }
+  }
+
+/* end of section two */
+
+
+/*Start of contributor page styling */
+
+.contributors-body {
+  margin: 1vw;
+}
+
+.contributors-main-section {
+display: grid;
+grid-template-columns: auto auto auto;
+grid-template-rows: auto;
+gap: 2vw;
+}
+
+.contributors-page .hero-section {
+  margin: 10px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.contributor-card {
+  border: 2px solid var(--medium-gray);
+  border-radius: 8px;
+  text-align: center;
+  
+}
+
+.contributor-avatar {
+  width: 30vw;
+  max-width: 400px;
+}
+
+.contributor-card .social-links {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+.contributor-card .social-links i {
+  color: var(--light-gray)
+}
+
+.contributor-card .social-links i:hover {
+  color: var(--dark-gray);
+}
+
+@media only screen and (max-width: 912px) {
+  .contributors-main-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contributor-avatar {
+    width: 45vw;
+  }
+}
+/* End of contributor page styling */
+
 /* FOOTER */
 .footer {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 4em;
-
   padding: 5em 2em;
 }
+
 
 .footer-project-summary {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 2.5em;
-
+  gap: 1.5em;
   max-width: 30em;
 }
 
@@ -251,7 +378,6 @@
 .footer-statement {
   font-weight: 300;
   line-height: 1.75;
-  text-align: justify;
 }
 
 .footer-nav {
@@ -262,7 +388,6 @@
 
 .footer-list {
   list-style: none;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -300,12 +425,15 @@
 .repo-link,
 .repo-link:visited {
   background-color: var(--medium-gray);
-  border-radius: 0.25em;
+  border-radius: .25em;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8125em 1em;
-  gap: 0.625em;
+
+  padding: .8125em 1em;
+  gap: .625em;
+
   color: white;
   font-weight: 600;
 }
@@ -317,6 +445,7 @@
   .footer {
     padding: 5em;
   }
+  
   .footer-nav {
     flex-direction: row;
     justify-content: space-between;
@@ -341,6 +470,7 @@
   .footer-project-summary {
     flex: 0 0 25em;
     max-width: none;
+    gap: 2.5em;
   }
 
   .footer-nav {
